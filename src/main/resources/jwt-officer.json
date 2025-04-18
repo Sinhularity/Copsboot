@@ -1,0 +1,35 @@
+{
+  "exp": 1694870234,
+  "iat": 1694869934,
+  "auth_time": 1694865932,
+  "jti": "337739fb-10cd-4b99-9455-9532bdaf0de8",
+  "iss": "http://localhost:8180/realms/copsboot",
+  "aud": "account",
+  "sub": "28b52140-d835-4b99-96c8-6021c3b3c670",
+  "typ": "Bearer",
+  "azp": "copsboot-mobile-client",
+  "session_state": "1922996b-bb75-4e8b-bf39-7ab6a9502cc8",
+  "acr": "0",
+  "allowed-origins": ["https://oauth.pstmn.io"],
+  "realm_access": {
+    "roles": [
+      "offline_access",
+      "default-roles-coopsbot",
+      "OFFICER",
+      "uma_authorization"
+    ]
+  },
+  "resource_access": {
+    "account": {
+      "roles": ["manage-account", "manage-account-links", "view-profile"]
+    }
+  },
+  "scope": "email profile",
+  "sid": "d0e15aaf-483e-4232-82d4-a00cd25ba0fd",
+  "email_verified": false,
+  "name": "Wim Example",
+  "preferred_username": "wim@example.com",
+  "given_name": "Wim",
+  "family_name": "Example",
+  "email": "wim@example.com"
+}

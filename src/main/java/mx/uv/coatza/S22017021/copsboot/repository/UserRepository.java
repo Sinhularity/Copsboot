@@ -1,0 +1,15 @@
+package mx.uv.coatza.S22017021.copsboot.repository;
+
+import java.util.Optional;
+
+import org.springframework.data.repository.CrudRepository;
+
+
+
+import mx.uv.coatza.S22017021.copsboot.model.AuthServerId;
+import mx.uv.coatza.S22017021.copsboot.model.User;
+import mx.uv.coatza.S22017021.copsboot.model.UserId;
+
+public interface UserRepository extends CrudRepository<User, UserId>, UserRepositoryCustom {
+    Optional<User> findByAuthServerId(AuthServerId authServerId);
+}
