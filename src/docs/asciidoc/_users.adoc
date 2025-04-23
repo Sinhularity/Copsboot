@@ -19,10 +19,30 @@ If you do log on as a user, you get more information on that user:
 // operation::own-details[snippets='http-request,http-response,response-fields']
 
 ==== HTTP request
+
 include::{snippets}/own-details/http-request.adoc[]
 
 ==== HTTP response
+
 include::{snippets}/own-details/http-response.adoc[]
 
 ==== Response fields
+
 include::{snippets}/own-details/response-fields.adoc[]
+
+=== Create a user
+
+To create an new user, do a `POST` on `/api/users`:
+
+// operation::create-user[snippets='http-request,request-fields http-response,response
+// fields']
+==== HTTP request
+include::{snippets}/create-user/http-request.adoc[]
+==== Request fields
+The request fields for the create user call are documented in this table:
+include::{snippets}/create-user/request-fields.adoc[]
+==== HTTP response
+include::{snippets}/create-user/http-response.adoc[]
+==== Response fields
+The response fields for the create user call are documented in this table:
+include::{snippets}/create-user/response-fields.adoc[]

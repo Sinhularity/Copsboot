@@ -10,29 +10,24 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.util.UUID;
 
+import mx.uv.coatza.S22017021.copsboot.annotation.CopsbootControllerTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.c4_soft.springaddons.security.oauth2.test.annotations.WithJwt;
-import com.c4_soft.springaddons.security.oauth2.test.webmvc.AutoConfigureAddonsWebmvcResourceServerSecurity;
 
 import mx.uv.coatza.S22017021.copsboot.controller.UserRestController;
 import mx.uv.coatza.S22017021.copsboot.model.AuthServerId;
 import mx.uv.coatza.S22017021.copsboot.model.User;
 import mx.uv.coatza.S22017021.copsboot.model.UserId;
-import mx.uv.coatza.S22017021.copsboot.security.WebSecurityConfiguration;
 import mx.uv.coatza.S22017021.copsboot.service.CreateUserParameters;
 import mx.uv.coatza.S22017021.copsboot.service.UserService;
 
-@WebMvcTest(UserRestController.class)
-@AutoConfigureAddonsWebmvcResourceServerSecurity
-@Import(WebSecurityConfiguration.class)
+@CopsbootControllerTest(UserRestController.class)
 public class UserRestControllerTest {
     @Autowired
     private MockMvc mockMvc;

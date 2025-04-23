@@ -7,6 +7,6 @@
 
 == Introduction
 The Copsboot project uses a REST API for interfacing with the server.
-This document covers version {project.version} of the application.
+This document covers version {project-version} of the application.
 
 include::_users.adoc[]

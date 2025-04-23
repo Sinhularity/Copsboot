@@ -27,11 +27,11 @@
         <url/>
     </scm>
     <properties>
+        <project-version>${project.version}</project-version>
         <java.version>21</java.version>
         <guava.version>31.1-jre</guava.version>
     </properties>
     <dependencies>
-
         <dependency>
             <groupId>org.asciidoctor</groupId>
             <artifactId>asciidoctor-maven-plugin</artifactId>
@@ -167,7 +167,7 @@
                     <configuration>
                         <doctype>book</doctype>
                         <attributes>
-                            <project-version>${project-version}</project-version>
+                            <project-version>${project.version}</project-version>
                         </attributes>
                     </configuration>
                 </plugin>
