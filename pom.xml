@@ -31,6 +31,14 @@
         <guava.version>31.1-jre</guava.version>
     </properties>
     <dependencies>
+
+        <dependency>
+            <groupId>org.asciidoctor</groupId>
+            <artifactId>asciidoctor-maven-plugin</artifactId>
+            <version>3.2.0</version>
+            <type>maven-plugin</type>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.restdocs</groupId>
             <artifactId>spring-restdocs-mockmvc</artifactId>
@@ -41,7 +49,7 @@
             <artifactId>spring-addons-starter-oidc-test</artifactId>
             <version>8.1.10</version>
         </dependency>
-               <dependency>
+        <dependency>
             <groupId>com.c4-soft.springaddons</groupId>
             <artifactId>spring-addons-starter-oidc</artifactId>
             <version>8.1.10</version>
@@ -91,12 +99,6 @@
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.asciidoctor</groupId>
-            <artifactId>asciidoctor-maven-plugin</artifactId>
-            <version>3.0.0</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -105,13 +107,25 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.3</version>
+                <configuration>
+                    <redirectTestOutputToFile>true</redirectTestOutputToFile>
+                    <printSummary>false</printSummary>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
         </plugins>
         <pluginManagement>
             <plugins>
-               <plugin>
+                <plugin>
                     <groupId>org.asciidoctor</groupId>
                     <artifactId>asciidoctor-maven-plugin</artifactId>
-                    <version>3.0.3</version>
+                    <version>3.2.0</version>
                     <executions>
                         <execution>
                             <id>generate-docs</id>
@@ -121,6 +135,10 @@
                             </goals>
                             <configuration>
                                 <backend>html</backend>
+                                <sourceDirectory>${project.basedir}/src/docs/asciidoc</sourceDirectory>
+                                <attributes>
+                                    <snippets>${project.build.directory}/generated-snippets</snippets>
+                                </attributes>
                             </configuration>
                         </execution>
                         <execution>
@@ -149,10 +167,10 @@
                     <configuration>
                         <doctype>book</doctype>
                         <attributes>
-                            <project-version>${project.version}</project-version>
+                            <project-version>${project-version}</project-version>
                         </attributes>
                     </configuration>
-               </plugin>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
