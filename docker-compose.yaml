@@ -11,3 +11,9 @@ services:
       KC_HOSTNAME: 'localhost'
       KC_HEALTH_ENABLED: 'true'
       KC_METRICS_ENABLED: 'true'
+  db:
+    image: 'postgres:16.0'
+    ports:
+       - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: my-postgres-db-pwd
