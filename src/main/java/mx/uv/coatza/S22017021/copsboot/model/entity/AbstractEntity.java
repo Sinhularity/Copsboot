@@ -1,4 +1,4 @@
-package mx.uv.coatza.S22017021.copsboot.model;
+package mx.uv.coatza.S22017021.copsboot.model.entity;
 
 
 import static com.google.common.base.MoreObjects.toStringHelper;
@@ -6,6 +6,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.MappedSuperclass;
+import mx.uv.coatza.S22017021.copsboot.model.ArtifactForFramework;
 
 @MappedSuperclass
 public abstract class AbstractEntity <T extends EntityId<?>> implements Entity<T> {

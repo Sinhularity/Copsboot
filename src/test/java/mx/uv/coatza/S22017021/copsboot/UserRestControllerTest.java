@@ -1,10 +1,11 @@
 package mx.uv.coatza.S22017021.copsboot;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.jwt;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -22,10 +23,11 @@ import com.c4_soft.springaddons.security.oauth2.test.annotations.WithJwt;
 
 import mx.uv.coatza.S22017021.copsboot.controller.UserRestController;
 import mx.uv.coatza.S22017021.copsboot.model.AuthServerId;
-import mx.uv.coatza.S22017021.copsboot.model.User;
-import mx.uv.coatza.S22017021.copsboot.model.UserId;
+import mx.uv.coatza.S22017021.copsboot.model.user.User;
+import mx.uv.coatza.S22017021.copsboot.model.user.UserId;
 import mx.uv.coatza.S22017021.copsboot.service.CreateUserParameters;
 import mx.uv.coatza.S22017021.copsboot.service.UserService;
+import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 
 @CopsbootControllerTest(UserRestController.class)
 public class UserRestControllerTest {
@@ -84,5 +86,28 @@ public class UserRestControllerTest {
                         """))
                 .andExpect(status().isForbidden());
     }
+
+
+    @Test
+    void givenEmptyMobileToken_badRequestIsReturned() throws Exception {
+        mockMvc.perform(post("/api/users")
+                .with(jwt().jwt(builder -> builder.subject(UUID.randomUUID().toString()))
+                .authorities(new SimpleGrantedAuthority("ROLE_OFFICER")))
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(
+                        """
+                          {
+                          "mobileToken": ""
+                          }
+                        """
+                        ))
+                .andExpect(status().isBadRequest())
+                .andDo(print())
+                .andExpect(jsonPath("errors[0].fieldName").value("mobileToken"));
+
+        verify(userService, never()).createUser(any(CreateUserParameters.class));
+        MockMvcResultHandlers.print();
+    }
+
 
 }

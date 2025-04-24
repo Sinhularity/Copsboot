@@ -1,4 +1,4 @@
-package mx.uv.coatza.S22017021.copsboot.model;
+package mx.uv.coatza.S22017021.copsboot.model.entity;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -6,6 +6,7 @@ import java.util.Objects;
 import static com.google.common.base.MoreObjects.toStringHelper;
 
 import jakarta.persistence.MappedSuperclass;
+import mx.uv.coatza.S22017021.copsboot.model.ArtifactForFramework;
 
 @MappedSuperclass
 public abstract class AbstractEntityId <T extends Serializable> implements Serializable, EntityId<T> {

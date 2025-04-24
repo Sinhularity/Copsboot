@@ -1,8 +1,8 @@
 package mx.uv.coatza.S22017021.copsboot.controller;
 
 import mx.uv.coatza.S22017021.copsboot.model.AuthServerId;
-import mx.uv.coatza.S22017021.copsboot.model.User;
-import mx.uv.coatza.S22017021.copsboot.model.UserId;
+import mx.uv.coatza.S22017021.copsboot.model.user.User;
+import mx.uv.coatza.S22017021.copsboot.model.user.UserId;
 
 public class UserDto {
     private String userId;

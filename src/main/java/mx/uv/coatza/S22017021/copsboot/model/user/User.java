@@ -1,7 +1,9 @@
-package mx.uv.coatza.S22017021.copsboot.model;
+package mx.uv.coatza.S22017021.copsboot.model.user;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import mx.uv.coatza.S22017021.copsboot.model.AuthServerId;
+import mx.uv.coatza.S22017021.copsboot.model.entity.AbstractEntity;
 
 @Entity
 @Table(name = "copsboot_user")

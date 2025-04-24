@@ -1,6 +1,5 @@
 package mx.uv.coatza.S22017021.copsboot;
 
-import java.sql.SQLException;
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -19,7 +18,7 @@ import org.springframework.context.annotation.Bean;
 
 import io.github.wimdeblauwe.jpearl.InMemoryUniqueIdGenerator;
 import io.github.wimdeblauwe.jpearl.UniqueIdGenerator;
-import mx.uv.coatza.S22017021.copsboot.model.User;
+import mx.uv.coatza.S22017021.copsboot.model.user.User;
 import mx.uv.coatza.S22017021.copsboot.repository.UserRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ActiveProfiles;
@@ -63,5 +62,4 @@ public class UserRepositoryTest {
             return new InMemoryUniqueIdGenerator();
         }
     }
-
 }

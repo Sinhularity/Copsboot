@@ -1,4 +1,4 @@
-package mx.uv.coatza.S22017021.copsboot.model;
+package mx.uv.coatza.S22017021.copsboot.model.entity;
 
 /**
  * Interface for entity objects.

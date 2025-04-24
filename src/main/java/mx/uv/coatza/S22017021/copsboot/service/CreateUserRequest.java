@@ -2,11 +2,12 @@ package mx.uv.coatza.S22017021.copsboot.service;
 
 import java.util.UUID;
 
+import jakarta.validation.constraints.NotEmpty;
 import org.springframework.security.oauth2.jwt.Jwt;
 
 import mx.uv.coatza.S22017021.copsboot.model.AuthServerId;
 
-public record CreateUserRequest(String mobileToken) {
+public record CreateUserRequest(@NotEmpty String mobileToken) {
     public CreateUserParameters toParameters(Jwt jwt) {
         AuthServerId authServerId = new AuthServerId(UUID.fromString(jwt.getSubject()));
 

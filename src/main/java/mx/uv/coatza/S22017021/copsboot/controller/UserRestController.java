@@ -3,6 +3,7 @@ package mx.uv.coatza.S22017021.copsboot.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -18,7 +19,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 import mx.uv.coatza.S22017021.copsboot.model.AuthServerId;
-import mx.uv.coatza.S22017021.copsboot.model.User;
+import mx.uv.coatza.S22017021.copsboot.model.user.User;
 import mx.uv.coatza.S22017021.copsboot.service.CreateUserParameters;
 import mx.uv.coatza.S22017021.copsboot.service.CreateUserRequest;
 import mx.uv.coatza.S22017021.copsboot.service.UserService;
@@ -48,7 +49,7 @@ public class UserRestController {
     @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("hasRole('OFFICER')")
     public UserDto createUser(@AuthenticationPrincipal Jwt jwt,
-            @RequestBody CreateUserRequest request) {
+            @Valid @RequestBody CreateUserRequest request) {
         CreateUserParameters parameters = request.toParameters(jwt);
         User user = userService.createUser(parameters);
         return UserDto.fromUser(user);

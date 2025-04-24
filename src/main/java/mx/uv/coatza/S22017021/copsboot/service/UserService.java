@@ -5,8 +5,8 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import mx.uv.coatza.S22017021.copsboot.model.AuthServerId;
-import mx.uv.coatza.S22017021.copsboot.model.User;
-import mx.uv.coatza.S22017021.copsboot.model.UserId;
+import mx.uv.coatza.S22017021.copsboot.model.user.User;
+import mx.uv.coatza.S22017021.copsboot.model.user.UserId;
 import mx.uv.coatza.S22017021.copsboot.repository.UserRepository;
 
 @Service
