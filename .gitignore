@@ -31,3 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### properties ###
+### This file should never be added to version control as it contains your personal setup
+### and password. A good practice is committing an application
+### local.properties.template so there is a sample file to start from.
+### /src/main/resources/application-local.properties ###
