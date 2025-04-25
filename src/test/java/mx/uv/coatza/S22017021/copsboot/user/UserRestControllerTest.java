@@ -1,4 +1,4 @@
-package mx.uv.coatza.S22017021.copsboot;
+package mx.uv.coatza.S22017021.copsboot.user;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
@@ -21,18 +21,20 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import com.c4_soft.springaddons.security.oauth2.test.annotations.WithJwt;
 
-import mx.uv.coatza.S22017021.copsboot.controller.UserRestController;
+import mx.uv.coatza.S22017021.copsboot.controller.user.UserRestController;
 import mx.uv.coatza.S22017021.copsboot.model.AuthServerId;
 import mx.uv.coatza.S22017021.copsboot.model.user.User;
 import mx.uv.coatza.S22017021.copsboot.model.user.UserId;
-import mx.uv.coatza.S22017021.copsboot.service.CreateUserParameters;
-import mx.uv.coatza.S22017021.copsboot.service.UserService;
+import mx.uv.coatza.S22017021.copsboot.service.user.CreateUserParameters;
+import mx.uv.coatza.S22017021.copsboot.service.user.UserService;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 
 @CopsbootControllerTest(UserRestController.class)
 public class UserRestControllerTest {
+
     @Autowired
     private MockMvc mockMvc;
+
     @MockBean // Deaprecated, but still works
     private UserService userService;
 

@@ -1,4 +1,4 @@
-package mx.uv.coatza.S22017021.copsboot.repository;
+package mx.uv.coatza.S22017021.copsboot.repository.user;
 
 import java.util.UUID;
 

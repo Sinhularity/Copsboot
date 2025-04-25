@@ -1,4 +1,4 @@
-package mx.uv.coatza.S22017021.copsboot.controller;
+package mx.uv.coatza.S22017021.copsboot.controller.user;
 
 import mx.uv.coatza.S22017021.copsboot.model.AuthServerId;
 import mx.uv.coatza.S22017021.copsboot.model.user.User;

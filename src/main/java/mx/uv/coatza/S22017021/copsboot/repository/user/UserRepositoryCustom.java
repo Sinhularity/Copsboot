@@ -1,4 +1,4 @@
-package mx.uv.coatza.S22017021.copsboot.repository;
+package mx.uv.coatza.S22017021.copsboot.repository.user;
 
 import mx.uv.coatza.S22017021.copsboot.model.user.UserId;
 

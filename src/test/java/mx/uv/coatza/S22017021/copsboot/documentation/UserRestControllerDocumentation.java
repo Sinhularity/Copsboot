@@ -1,12 +1,12 @@
 package mx.uv.coatza.S22017021.copsboot.documentation;
 
 import mx.uv.coatza.S22017021.copsboot.annotation.CopsbootControllerDocumentationTest;
-import mx.uv.coatza.S22017021.copsboot.controller.UserDto;
+import mx.uv.coatza.S22017021.copsboot.controller.user.UserDto;
 import mx.uv.coatza.S22017021.copsboot.model.AuthServerId;
 import mx.uv.coatza.S22017021.copsboot.model.user.User;
 import mx.uv.coatza.S22017021.copsboot.model.user.UserId;
-import mx.uv.coatza.S22017021.copsboot.service.CreateUserParameters;
-import mx.uv.coatza.S22017021.copsboot.service.CreateUserRequest;
+import mx.uv.coatza.S22017021.copsboot.service.user.CreateUserParameters;
+import mx.uv.coatza.S22017021.copsboot.service.user.CreateUserRequest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -32,8 +32,8 @@ import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.docu
 import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.get;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.jwt;
 
-import mx.uv.coatza.S22017021.copsboot.controller.UserRestController;
-import mx.uv.coatza.S22017021.copsboot.service.UserService;
+import mx.uv.coatza.S22017021.copsboot.controller.user.UserRestController;
+import mx.uv.coatza.S22017021.copsboot.service.user.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;

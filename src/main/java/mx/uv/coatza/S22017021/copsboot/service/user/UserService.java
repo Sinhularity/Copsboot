@@ -1,15 +1,18 @@
-package mx.uv.coatza.S22017021.copsboot.service;
+package mx.uv.coatza.S22017021.copsboot.service.user;
 
 import java.util.Optional;
 
+import jakarta.transaction.Transactional;
+import mx.uv.coatza.S22017021.copsboot.Exception.UserNotFoundException;
 import org.springframework.stereotype.Service;
 
 import mx.uv.coatza.S22017021.copsboot.model.AuthServerId;
 import mx.uv.coatza.S22017021.copsboot.model.user.User;
 import mx.uv.coatza.S22017021.copsboot.model.user.UserId;
-import mx.uv.coatza.S22017021.copsboot.repository.UserRepository;
+import mx.uv.coatza.S22017021.copsboot.repository.user.UserRepository;
 
 @Service
+@Transactional
 public class UserService {
     private final UserRepository repository;
 
@@ -27,5 +30,10 @@ public class UserService {
                 createUserParameters.authServerId(),
                 createUserParameters.mobileToken());
         return repository.save(user);
+    }
+
+    public User getUserById(UserId userId) {
+        return repository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException(userId));
     }
 }

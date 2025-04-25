@@ -1,4 +1,4 @@
-package mx.uv.coatza.S22017021.copsboot;
+package mx.uv.coatza.S22017021.copsboot.user;
 
 import java.util.UUID;
 
@@ -19,7 +19,7 @@ import org.springframework.context.annotation.Bean;
 import io.github.wimdeblauwe.jpearl.InMemoryUniqueIdGenerator;
 import io.github.wimdeblauwe.jpearl.UniqueIdGenerator;
 import mx.uv.coatza.S22017021.copsboot.model.user.User;
-import mx.uv.coatza.S22017021.copsboot.repository.UserRepository;
+import mx.uv.coatza.S22017021.copsboot.repository.user.UserRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ActiveProfiles;
 
@@ -34,11 +34,6 @@ public class UserRepositoryTest {
     private EntityManager entityManager;
     @Autowired
     private JdbcTemplate jdbcTemplate;
-
-
-
-    @Autowired
-    private UserRepository userRepository;
 
     @Test
     public void testStoreUser() {

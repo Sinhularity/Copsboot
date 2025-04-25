@@ -1,4 +1,4 @@
-package mx.uv.coatza.S22017021.copsboot.controller;
+package mx.uv.coatza.S22017021.copsboot.controller.user;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,9 +20,9 @@ import java.util.UUID;
 
 import mx.uv.coatza.S22017021.copsboot.model.AuthServerId;
 import mx.uv.coatza.S22017021.copsboot.model.user.User;
-import mx.uv.coatza.S22017021.copsboot.service.CreateUserParameters;
-import mx.uv.coatza.S22017021.copsboot.service.CreateUserRequest;
-import mx.uv.coatza.S22017021.copsboot.service.UserService;
+import mx.uv.coatza.S22017021.copsboot.service.user.CreateUserParameters;
+import mx.uv.coatza.S22017021.copsboot.service.user.CreateUserRequest;
+import mx.uv.coatza.S22017021.copsboot.service.user.UserService;
 
 @RestController
 @RequestMapping("/api/users")
