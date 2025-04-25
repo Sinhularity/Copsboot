@@ -1,4 +1,4 @@
-package mx.uv.coatza.S22017021.copsboot.infrastructure.constraints;
+package mx.uv.coatza.S22017021.copsboot.constraints;
 
 import jakarta.validation.ConstraintViolation;
 import org.assertj.core.api.AbstractAssert;

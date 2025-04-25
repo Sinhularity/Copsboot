@@ -36,4 +36,8 @@ public class UserService {
         return repository.findById(userId)
                 .orElseThrow(() -> new UserNotFoundException(userId));
     }
+
+    public Optional<User> findUserByMobileToken(String mobileToken) {
+        return repository.findByMobileToken(mobileToken);
+    }
 }

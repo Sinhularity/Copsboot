@@ -12,4 +12,6 @@ import mx.uv.coatza.S22017021.copsboot.model.user.UserId;
 
 public interface UserRepository extends CrudRepository<User, UserId>, UserRepositoryCustom {
     Optional<User> findByAuthServerId(AuthServerId authServerId);
+
+    Optional<User> findByMobileToken(String mobileToken);
 }

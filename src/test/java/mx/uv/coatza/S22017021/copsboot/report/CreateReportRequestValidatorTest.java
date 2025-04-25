@@ -13,7 +13,7 @@ import org.springframework.mock.web.MockMultipartFile;
 import java.time.Instant;
 import java.util.Set;
 
-import static mx.uv.coatza.S22017021.copsboot.infrastructure.constraints.ConstraintViolationSetAssert.assertThat;
+import static mx.uv.coatza.S22017021.copsboot.constraints.ConstraintViolationSetAssert.assertThat;
 
 public class CreateReportRequestValidatorTest {
 

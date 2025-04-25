@@ -30,7 +30,7 @@ public class ReportRestController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ReportDto createReport(@AuthenticationPrincipal Jwt jwt,
-                                  @Valid @RequestBody CreateReportRequest request) {
+                                  @Valid CreateReportRequest request) {
         AuthServerId authServerId = new AuthServerId(UUID.fromString(jwt.getSubject()));
         User user = userService.findUserByAuthServerId(authServerId)
                 .orElseThrow(() -> new UserNotFoundException(authServerId));

@@ -2,11 +2,13 @@ package mx.uv.coatza.S22017021.copsboot.Exception.Handler;
 
 import mx.uv.coatza.S22017021.copsboot.Exception.FieldErrorResponse;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -28,6 +30,12 @@ public class RestControllerExceptionHandler {
 
     }
 
+    @ExceptionHandler(MaxUploadSizeExceededException.class)
+    public ResponseEntity<Map<String, String>> maxUploadSizeExceeded(MaxUploadSizeExceededException e) {
+        return ResponseEntity.status(HttpStatus.PAYLOAD_TOO_LARGE)
+                .body(Map.of("code", "MAX_UPLOAD_SIZE_EXCEEDED",
+                        "description", e.getMessage()));
+    }
 
     private Map<String, List<FieldErrorResponse>> error(List<FieldErrorResponse> errors)
     {

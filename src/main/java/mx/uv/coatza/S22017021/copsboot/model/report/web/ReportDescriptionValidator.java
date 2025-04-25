@@ -1,4 +1,4 @@
-package mx.uv.coatza.S22017021.copsboot.model.report.web.constraints;
+package mx.uv.coatza.S22017021.copsboot.model.report.web;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;

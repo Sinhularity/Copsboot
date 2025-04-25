@@ -2,7 +2,7 @@ package mx.uv.coatza.S22017021.copsboot.model.report.web.annotations;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
-import mx.uv.coatza.S22017021.copsboot.model.report.web.constraints.CreateReportRequestValidator;
+import mx.uv.coatza.S22017021.copsboot.model.report.web.CreateReportRequestValidator;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
