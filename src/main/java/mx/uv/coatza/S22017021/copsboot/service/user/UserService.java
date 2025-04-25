@@ -12,7 +12,6 @@ import mx.uv.coatza.S22017021.copsboot.model.user.UserId;
 import mx.uv.coatza.S22017021.copsboot.repository.user.UserRepository;
 
 @Service
-@Transactional
 public class UserService {
     private final UserRepository repository;
 
