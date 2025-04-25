@@ -3,7 +3,7 @@ package mx.uv.coatza.S22017021.copsboot.model.report.web.constraints;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import mx.uv.coatza.S22017021.copsboot.model.report.web.CreateReportRequest;
-import mx.uv.coatza.S22017021.copsboot.model.report.web.ValidCreateReportRequest;
+import mx.uv.coatza.S22017021.copsboot.model.report.web.annotations.ValidCreateReportRequest;
 
 public class CreateReportRequestValidator implements ConstraintValidator<ValidCreateReportRequest, CreateReportRequest> {
 

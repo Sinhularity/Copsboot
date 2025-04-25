@@ -1,6 +1,8 @@
 package mx.uv.coatza.S22017021.copsboot.model.report.web;
 
 import jakarta.validation.constraints.NotNull;
+import mx.uv.coatza.S22017021.copsboot.model.report.web.annotations.ValidCreateReportRequest;
+import mx.uv.coatza.S22017021.copsboot.model.report.web.annotations.ValidReportDescription;
 import mx.uv.coatza.S22017021.copsboot.service.report.CreateReportParameters;
 import mx.uv.coatza.S22017021.copsboot.model.user.UserId;
 import org.springframework.web.multipart.MultipartFile;

@@ -2,7 +2,7 @@ package mx.uv.coatza.S22017021.copsboot.model.report.web.constraints;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-import mx.uv.coatza.S22017021.copsboot.model.report.web.ValidReportDescription;
+import mx.uv.coatza.S22017021.copsboot.model.report.web.annotations.ValidReportDescription;
 
 public class ReportDescriptionValidator implements ConstraintValidator<ValidReportDescription, String> {
 
