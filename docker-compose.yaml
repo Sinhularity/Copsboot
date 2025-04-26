@@ -1,4 +1,5 @@
 services:
+    # Keycloak
   identity:
     image: 'quay.io/keycloak/keycloak:22.0.1'
     entrypoint: /opt/keycloak/bin/kc.sh start-dev --import-realm
@@ -11,9 +12,24 @@ services:
       KC_HOSTNAME: 'localhost'
       KC_HEALTH_ENABLED: 'true'
       KC_METRICS_ENABLED: 'true'
+  # Postgres
   db:
     image: 'postgres:16.0'
     ports:
-       - 5432:5432
+       - "5432:5432"
     environment:
+      Postgres_DB: copsbootdb
       POSTGRES_PASSWORD: my-postgres-db-pwd
+    # In case the database is not created automatically
+    volumes:
+      -   ./resources/db/migration/postgresql/V1.0.0.1__users.sql:/docker-entrypoint-initdb.d/V1.0.0.1__users.sql
+
+  app:
+    image: sinhularity/copsboot
+    ports:
+      - '8081:8081'
+    environment:
+      SPRING_PROFILES_ACTIVE: 'docker'
+    depends_on:
+      - db
+      - identity
