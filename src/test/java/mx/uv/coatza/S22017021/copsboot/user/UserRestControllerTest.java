@@ -78,14 +78,13 @@ public class UserRestControllerTest {
     @Test
     void givenAuthenticatedUserThatIsNotAnOfficer_forbiddenIsReturned() throws Exception {
         mockMvc.perform(post("/api/users")
-                .with(jwt().jwt(builder -> builder.subject(UUID.randomUUID()
-                        .toString())))
-                .contentType(MediaType.APPLICATION_JSON)
-                .content("""
-                        {
-                            "mobileToken": "c41536a5a8b9d3f14a7e5472a5322b5e1f76a6e7a9255c2c2e7e0d3a2c5b9d0"
-                        }
-                        """))
+                        .with(jwt().jwt(builder -> builder.subject(UUID.randomUUID().toString())))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {
+                                    "mobileToken": "c41536a5a8b9d3f14a7e5472a5322b5e1f76a6e7a9255c2c2e7e0d3a2c5b9d0"
+                                }
+                                """))
                 .andExpect(status().isForbidden());
     }
 

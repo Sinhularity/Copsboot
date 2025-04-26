@@ -19,7 +19,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 
-import static mx.uv.coatza.S22017021.copsboot.constraints.ConstraintViolationSetAssert.assertThat;
+import static mx.uv.coatza.S22017021.copsboot.report.constraint.ConstraintViolationSetAssert.assertThat;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
@@ -46,7 +46,7 @@ public class CreateUserRequestValidatorTest {
         CreateUserRequest request = new CreateUserRequest(mobileToken);
         Set<ConstraintViolation<CreateUserRequest>> violationSet = validator.validate(request);
         assertThat(violationSet)
-                .hasViolationSize(2)
+                .hasViolationSize(1) // NotEmpty doesn't trigger
                 .hasViolationOnPath("mobileToken");
     }
     @Test

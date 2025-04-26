@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.multipart.MaxUploadSizeExceededException;
+import org.springframework.security.authorization.AuthorizationDeniedException;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -40,5 +41,15 @@ public class RestControllerExceptionHandler {
     private Map<String, List<FieldErrorResponse>> error(List<FieldErrorResponse> errors)
     {
         return Collections.singletonMap("errors",errors);
+    }
+
+    @ExceptionHandler(AuthorizationDeniedException.class)
+    @ResponseBody
+    @ResponseStatus(HttpStatus.FORBIDDEN)
+    public Map<String, String> handleAuthorizationDenied(AuthorizationDeniedException ex) {
+        return Map.of(
+                "code", "AUTHORIZATION_DENIED",
+                "message", "Access Denied"
+        );
     }
 }

@@ -3,5 +3,7 @@ set JAVA_HOME=%PROGRAMFILES%\Java\jdk-
 
 Check mvn --version
 
+mvn package -Pci
+
 docker build -t copsboot .
 docker run -p 8080:8080 copsboot

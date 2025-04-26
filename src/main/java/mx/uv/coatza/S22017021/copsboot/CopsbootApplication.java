@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CopsbootApplication {
 
-	@RequestMapping("/")
+	@RequestMapping("/home")
 	public String home() {
 		return """
 				Kevin Sebastian Frias García
